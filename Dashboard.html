@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Dashboard | VerticalGrow</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body data-page="dashboard">
+  <div id="site-header"></div>
+
+  <main>
+    <section class="page-hero dashboard-hero">
+      <span class="eyebrow">YOUR FARM AT A GLANCE</span>
+      <h1>Smart farming.<br><span>Clear insights.</span></h1>
+      <p>Explore a sample farm monitoring dashboard and get a basic crop suggestion based on your growing environment.</p>
+    </section>
+
+    <section class="section dashboard-wrap">
+      <div class="dashboard-top">
+        <div>
+          <span class="eyebrow">DEMO ENVIRONMENT</span>
+          <h2>Farm Overview</h2>
+          <p class="muted">Illustrative values, not live sensor readings.</p>
+        </div>
+        <span class="status-pill">● DEMO MODE</span>
+      </div>
+
+      <div class="metric-grid">
+        <article class="metric-card">
+          <span>🌡️ Temperature</span>
+          <strong id="temp">24°C</strong>
+          <small>Sample reading</small>
+        </article>
+        <article class="metric-card">
+          <span>💧 Humidity</span>
+          <strong id="humidity">65%</strong>
+          <small>Sample reading</small>
+        </article>
+        <article class="metric-card">
+          <span>💡 Light level</span>
+          <strong id="light">80%</strong>
+          <small>Illustrative setting</small>
+        </article>
+        <article class="metric-card">
+          <span>🌱 Growing trays</span>
+          <strong>120</strong>
+          <small>Example capacity</small>
+        </article>
+      </div>
+
+      <button class="btn" id="refresh-btn" type="button">Refresh Demo Values ↻</button>
+      <p class="muted small" id="refresh-note" aria-live="polite">These values are randomly simulated.</p>
+
+      <div class="dashboard-divider"></div>
+
+      <div class="section-heading">
+        <span class="eyebrow">CROP PLANNER</span>
+        <h2>Find a starting crop</h2>
+        <p>Choose your growing setup to receive a basic educational suggestion.</p>
+      </div>
+
+      <form id="crop-form" class="planner">
+        <label for="method">Growing method</label>
+        <select id="method" required>
+          <option value="hydroponics">Hydroponics</option>
+          <option value="aeroponics">Aeroponics</option>
+          <option value="soil">Growing in soil</option>
+        </select>
+
+        <label for="space">Available space</label>
+        <select id="space" required>
+          <option value="small">Small space</option>
+          <option value="medium">Medium space</option>
+          <option value="large">Large space</option>
+        </select>
+
+        <label for="goal">Your main goal</label>
+        <select id="goal" required>
+          <option value="easy">Easy to start</option>
+          <option value="quick">Short growing cycle</option>
+          <option value="herbs">Grow herbs</option>
+        </select>
+
+        <button class="btn" type="submit">Suggest a Crop →</button>
+      </form>
+
+      <div class="recommendation" id="recommendation" aria-live="polite" hidden>
+        <span class="eyebrow">YOUR STARTING SUGGESTION</span>
+        <h3 id="crop-result">Lettuce</h3>
+        <p id="crop-reason"></p>
+        <p class="muted small">This is a general suggestion, not an AI prediction or guarantee of successful growth.</p>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="section-heading">
+        <span class="eyebrow">LET'S CONNECT</span>
+        <h2>Interested in vertical farming?</h2>
+        <p>Use this sample form to try the website interaction.</p>
+      </div>
+
+      <form id="contact-form" class="planner contact-form">
+        <label for="name">Your name</label>
+        <input id="name" name="name" type="text" placeholder="Enter your name" required>
+        <label for="email">Email address</label>
+        <input id="email" name="email" type="email" placeholder="you@example.com" required>
+        <label for="message">Your message</label>
+        <textarea id="message" name="message" rows="4" placeholder="Tell us what you want to grow..." required></textarea>
+        <button class="btn" type="submit">Submit Enquiry →</button>
+        <p class="muted small" id="contact-note" aria-live="polite">Demo only: this form does not send or store your details.</p>
+      </form>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+</body>
+</html>
